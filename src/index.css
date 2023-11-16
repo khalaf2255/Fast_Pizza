@@ -1,34 +1,68 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+.opts {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+}
+label {
+  cursor: pointer;
+  width: 100%;
+  padding: 3px;
+  font-weight: bold;
+  transition: 0.5s;
+}
+.pointerEvents {
+  pointer-events: none;
+}
+.disabled {
+  pointer-events: none;
+  opacity: 0.6;
+  cursor: not-allowed !important;
+}
 
-@layer components {
-  .input {
-    @apply rounded-full border border-stone-200 px-4 py-2 text-sm transition-all duration-300 placeholder:text-stone-400 focus:outline-none focus:ring focus:ring-yellow-400 md:px-6 md:py-3;
-  }
+.selected {
+  color: blue;
+}
 
-  /* https://dev.to/afif/i-made-100-css-loaders-for-your-next-project-4eje */
-  .loader {
-    width: 45px;
-    aspect-ratio: 0.75;
-    --c: no-repeat linear-gradient(theme(colors.stone.800) 0 0);
-    background: var(--c) 0% 50%, var(--c) 50% 50%, var(--c) 100% 50%;
-    background-size: 20% 50%;
-    animation: loading 1s infinite linear;
-  }
+.correct {
+  color: green;
+}
+.wrong {
+  color: red;
+}
 
-  @keyframes loading {
-    20% {
-      background-position: 0% 0%, 50% 50%, 100% 50%;
-    }
-    40% {
-      background-position: 0% 100%, 50% 0%, 100% 50%;
-    }
-    60% {
-      background-position: 0% 50%, 50% 100%, 100% 0%;
-    }
-    80% {
-      background-position: 0% 50%, 50% 50%, 100% 100%;
-    }
-  }
+button {
+  cursor: pointer;
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  background: #00bcd45e;
+  border: navajowhite;
+  box-shadow: 3px 3px 3px #00bcd4e6;
+  transition: 0.4s;
+}
+
+label {
+  width: 100%;
+}
+label:hover {
+  background: #fff5f5;
+}
+
+.corr {
+  background: gray;
+  padding: 13px;
+  border-radius: 6px;
+  color: #fff;
+  position: absolute;
+  bottom: -70px;
+  width: 91%;
+}
+.corr b {
+  color: green;
+  background-color: #fff;
+  padding: 8px;
+  border-radius: 4px 4px 0px 0px;
+  border-bottom: 3px solid #000;
 }
